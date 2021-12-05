@@ -8,13 +8,14 @@ class Formatter {
   }
 
   static titleize(string) {
+    let newArray = []
     const excludeWords = ['the', 'a', 'an', 'but', 'of', 'and', 'for', 'at', 'by', 'from']
-    const splitString = string.split(" ")
+    const splitString = string.split(' ')
     for (const word of splitString) {
-      excludeWords.includes(word) ? word : cap(word)
+      newArray.push(excludeWords.includes(word) ? word :cap(word))
     }
-    console.log(splitString)
-    return splitString.join(" ")
+    
+    return cap(newArray.join(" "))
   }
 }
 
